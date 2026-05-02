@@ -1,0 +1,20 @@
+name: Run Coupon Bot Daily
+on:
+  schedule:
+    - cron: '30 2 * * *' # This runs it at 8:00 AM IST daily
+  workflow_dispatch: # This adds a button so you can run it "whenever you want"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.9'
+      - name: Install requirements
+        run: pip install requests beautifulsoup4
+      - name: Run script
+        run: python scraper.py
