@@ -48,8 +48,8 @@ def get_coupons():
 
 def send_telegram(text):
     # DONT FORGET TO PUT YOUR REAL DATA HERE
-    token = "PASTE_YOUR_TELEGRAM_TOKEN" 
-    chat_id = "PASTE_YOUR_CHAT_ID"
+    token = "8607568732:AAGihsIuxznCcnB5UGQWGt62dCwTED1ksg4" 
+    chat_id = "1958886454"
     url = f"https://api.telegram.org/bot{token}/sendMessage"
     payload = {'chat_id': chat_id, 'text': text}
     requests.post(url, data=payload)
